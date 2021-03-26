@@ -27,14 +27,14 @@ def rabinkarp(string,pattern,d_ascii):
                 if check==n:
                     print(pattern," found at ",i)
             if(i<m-n):
-                 hashgroup=(hashgroup-ord(string[i])*d_ascii**2)*d_ascii  + ord(string[i+n])
+                 hashgroup=(hashgroup-ord(string[i])*d_ascii**(n-1))*d_ascii  + ord(string[i+n])
         
     
 
 
 #string = input("Enter string : ")
-string="afunpafunnyfnulgfunoisfun"
-pattern = "fun"
+string="afunpafunnyfnulgfunoisfunny"
+pattern = "funny"
 
 d_ascii=256
 
