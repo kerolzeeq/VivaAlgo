@@ -13,9 +13,9 @@ Provide the pseudocode, implement the algorithm using Python,  explain the codes
 PART 2 – Implement the String Matching Algorithm
 
 Given a String “algorithmisfun”, search for the word “fun” in the String by applying the following algorithms:
- a) Rabin-karp Algorithm 
-b) KMP Algorithm 
-c) TRIES
+- [ ] Rabin-karp Algorithm 
+- [ ] KMP Algorithm 
+- [ ] TRIES
 
 Provide the pseudocode, implement the algorithm using Python, explain the codes/algorithm, and  explain running time complexity of each algorithm.
  
