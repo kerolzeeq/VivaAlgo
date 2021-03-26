@@ -1,5 +1,6 @@
 class Trie:
     head = {}
+
     def printTrie(self):
         cur=self.head;
         print(cur)
@@ -13,7 +14,7 @@ class Trie:
                     cur[ch] = {}
 
                 cur = cur[ch]
-                cur['*'] = True
+                cur[ch] = True
                 
             # * denotes the Trie has this word as item
             # if * doesn't exist, Trie doesn't have this word but as a path to longer word
@@ -29,15 +30,12 @@ class Trie:
             cur = cur[ch]
             print(cur)
 
-        if '*' in cur:
-            return True
-        else:
-            return False
+        return cur[ch]
 
 dictionary = Trie()
 
-dictionary.add("algorithmisfun")
+dictionary.add("algorithmisfun*")
 # a=a[1:]
 # print(a)
 # dictionary.printTrie()
-# print(dictionary.search("fun"))
+print(dictionary.search("fun"))
