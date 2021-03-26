@@ -34,7 +34,7 @@ class Trie:
 
 dictionary = Trie()
 
-dictionary.add("algorithmisfun*")
+dictionary.add("algorithmisfun")
 # a=a[1:]
 # print(a)
 # dictionary.printTrie()
