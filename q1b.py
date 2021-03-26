@@ -26,5 +26,5 @@ def radix_sort(arry):
     return arry
 
 a = [84,23,62,44,16,30,95,51]
-a= radix_sort(a)
+a = radix_sort(a)
 print(a)
