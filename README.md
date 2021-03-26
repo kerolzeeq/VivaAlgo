@@ -1,5 +1,5 @@
 # VivaAlgo
-Soalan2
+
 PART 1 – Implement the sorting algorithm
 
 Given the following array A = [84, 23, 62, 44, 16, 30, 95, 51], implement a program to sort the array using the following algorithm:
