@@ -1,21 +1,34 @@
-def counting_sort(arry):
-    maxnum = max(arry)
-    count_array = [0]*(maxnum+1)
+def counting_sort(A):
 
-    for i in arry:
-        count_array[i]+=1
+    #print initial
+    print (A)
 
-    for i in range(1,maxnum+1):
+    max_num = max(A)                    #95
+    count_array = [0]*(max_num+1)       #[0,1,2,3,...,95] --> [0,1,2,3,...,96]
+
+    #This will add 1 to every similar number from the array given to the index
+    #that indicates that the number in the array is
+    for i in A:
+        count_array[i] += 1
+    #print(count_array)
+
+    #This loop will cumalatively add at every index that has 1
+    for i in range(1, max_num+1):
         count_array[i] += count_array[i-1]
+    #print(count_array)
 
-    ans_arry = [0]*len(arry)
+    #This will minimize the size array.
+    ans_array = [0]*len(A)
+    #print(ans_array)
 
-    for i in arry:
-        idx = count_array[i]
-        ans_arry[idx-1] = i
-        count_array[i] -= 1
+    #This loop will sorting the numbers
+    for i in A:
+        idx = count_array[i]            #[16, 23, 30, 44, 51, 62, 84, 95]
+        ans_array[idx-1] = i            #[1,2,3,4,5,6,7,8]
+        count_array[i] -= 1             #[0,1,2,3,4,5,6,7]
+
+    return ans_array
     
-    return ans_arry
-a = [84,23,62,44,16,30,95,51]
-a= counting_sort(a)
-print(a)
+A = [84,23,62,44,16,30,95,51]
+A= counting_sort(A)
+print(A)

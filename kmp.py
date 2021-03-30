@@ -6,18 +6,18 @@ def kmp(string, pattern):
     prefix_table = [0]*len(pattern)
 
     curr_longest = 0
-    i = 1  # Index begins from 1 before prefix_table[0] is always 0
+    i = 1  # Index begins from 1 beacuse prefix_table[0] is 0
 
     while i < len(pattern):
         if pattern[i] == pattern[curr_longest]:
             curr_longest += 1
             prefix_table[i] = curr_longest
-            i += 1
+            i += 1 
 
         else:
             if curr_longest != 0:
                 curr_longest = prefix_table[curr_longest-1]
-                # i is not incremented here because this process repeats to find longest prefix
+                # i is not incremented here
             else:
                 prefix_table[i] = 0
                 i += 1
@@ -47,16 +47,17 @@ def kmp(string, pattern):
 
 
 string = "algorithmisfun"
-pattern = "algo"
+pattern = "fun"
 kmp(string, pattern)
 n = len(string)
 
-for i in range(1, 101):
-    ind_1 = random.randint(0, n)
-    ind_2 = random.randint(0, n)
-    while ind_2 == ind_1:
-        ind_2 = random.randint(0, n)
+# for i in range(1, 101):
+#     ind_1 = random.randint(0, n)
+#     ind_2 = random.randint(0, n)
+#     while ind_2 == ind_1:
+#         ind_2 = random.randint(0, n)
 
-    pattern = string[min(ind_1, ind_2):max(ind_1, ind_2)]
-    print("Test {i}: Pattern = {pattern}".format(i=i, pattern=pattern))
-    kmp(string, pattern)
+#     pattern = string[min(ind_1, ind_2):max(ind_1, ind_2)]
+#     print("Test {i}: Pattern = {pattern}".format(i=i, pattern=pattern))
+#     kmp(string, pattern)
+#     print("albusuk")

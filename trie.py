@@ -1,10 +1,11 @@
+
 class Trie:
     head = {}
 
     def printTrie(self):
-        cur=self.head;
+        cur=self.head
         print(cur)
-        print()
+        # print()
 
     def add(self, word):
         for i in range(len(word)):
@@ -28,7 +29,7 @@ class Trie:
             if ch not in cur:
                 return False
             cur = cur[ch]
-            print(cur)
+            # print(cur)
 
         return cur[ch]
 
@@ -37,5 +38,5 @@ dictionary = Trie()
 dictionary.add("algorithmisfun")
 # a=a[1:]
 # print(a)
-# dictionary.printTrie()
+dictionary.printTrie()
 print(dictionary.search("fun"))
