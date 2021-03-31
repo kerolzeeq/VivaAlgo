@@ -21,7 +21,7 @@ def kmp(string, pattern):
             else:
                 prefix_table[i] = 0
                 i += 1
-                # Once curr_longest is 0, this is considered a new prefix and the algorithm moves to the next char
+                # Once curr_longest is 0, the current char is not part of a prefix suffix and the algorithm moves to the next char
 
     i = 0
     j = 0
@@ -36,28 +36,22 @@ def kmp(string, pattern):
             j = prefix_table[j-1]
             #  Go back to the previous index of the pattern to find where the pattern repeated
 
-        elif string[i] != pattern[j] and i < len(string):
+        elif i < len(string) and string[i] != pattern[j]:
             if j != 0:
                 j = prefix_table[j-1]
                 # Similar to creating the prefix_table, this step is repeated to find the longest previous prefix until j = 0
             else:
                 i += 1
                 # No other choice, the pattern starts back at j = 0 and i is finally incremented
-                # Note that i does not need to reset to the start and hence reduces times
 
 
 string = "algorithmisfun"
 pattern = "fun"
+print("KMP with {str}".format(str=string))
 kmp(string, pattern)
 n = len(string)
 
-# for i in range(1, 101):
-#     ind_1 = random.randint(0, n)
-#     ind_2 = random.randint(0, n)
-#     while ind_2 == ind_1:
-#         ind_2 = random.randint(0, n)
-
-#     pattern = string[min(ind_1, ind_2):max(ind_1, ind_2)]
-#     print("Test {i}: Pattern = {pattern}".format(i=i, pattern=pattern))
-#     kmp(string, pattern)
-#     print("albusuk")
+print()
+partial_pattern_demo = "fualgorithmisfun"
+print("KMP with {str}".format(str=partial_pattern_demo))
+kmp(partial_pattern_demo,pattern)
